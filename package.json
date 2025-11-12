@@ -1,0 +1,10 @@
+{
+  "name": "jarvis",
+  "private": true,
+  "scripts": {
+    "build": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

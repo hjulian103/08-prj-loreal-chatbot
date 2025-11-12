@@ -1,0 +1,10 @@
+# Minimal wrangler config — update `account_id` (and `route`/`zone_id`) before production deploy
+name = "jarvis"
+main = "RESOURCE_cloudflare-worker.js"
+compatibility_date = "2025-11-12"
+workers_dev = true
+
+# Uncomment and fill these values when you have them (or set via CI secrets):
+# account_id = "your-account-id-here"
+# zone_id = "your-zone-id-here"
+# route = "example.com/*"
