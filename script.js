@@ -389,10 +389,10 @@ Your tone should be friendly, informative, and professional, reflecting the voic
   // Build the messages array with full conversation context
   const messages = [
     { role: "system", content: systemPrompt },
-    // Include previous messages for context (last 10 messages to avoid token limits)
+    // Include previous messages for context (last 50 messages to support longer conversations)
     ...currentConversation.messages
       .filter((m) => m.role !== "system")
-      .slice(-10)
+      .slice(-50)
       .map((m) => ({ role: m.role, content: m.content })),
     // Add the new user message
     { role: "user", content: userText },
@@ -423,5 +423,8 @@ Your tone should be friendly, informative, and professional, reflecting the voic
     return JSON.stringify(data);
   }
 
-  return reply;
+  // Remove markdown formatting characters (# and **) from the response
+  const cleanedReply = reply.replace(/[#*]/g, "");
+
+  return cleanedReply;
 }
