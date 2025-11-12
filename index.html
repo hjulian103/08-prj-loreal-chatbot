@@ -17,8 +17,85 @@
 
   <body>
     <div class="page-wrapper">
+      <!------- Sidebar for Conversation History ------->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>Conversations</h2>
+          <button id="closeSidebarBtn" class="close-sidebar-btn">
+            <span class="material-icons">close</span>
+          </button>
+          <button id="newChatBtn" class="new-chat-btn">
+            <span class="material-icons">add</span>
+            New Chat
+          </button>
+        </div>
+        <div id="conversationList" class="conversation-list">
+          <!-- Past conversations will be listed here -->
+        </div>
+      </aside>
+
+      <!------- Toggle Sidebar Button ------->
+      <button
+        id="toggleSidebar"
+        class="toggle-sidebar-btn"
+        aria-label="Toggle sidebar menu"
+      >
+        <span class="material-icons">menu</span>
+      </button>
+
+      <!------- Accessibility Controls ------->
+      <button
+        id="accessibilityMenuBtn"
+        class="accessibility-menu-btn"
+        aria-label="Open accessibility menu"
+      >
+        <span class="material-icons">settings_accessibility</span>
+      </button>
+
+      <div id="accessibilityModal" class="accessibility-modal">
+        <div class="accessibility-modal-content">
+          <div class="accessibility-modal-header">
+            <h3>Accessibility</h3>
+            <button
+              id="closeAccessibilityModal"
+              class="close-modal-btn"
+              aria-label="Close accessibility menu"
+            >
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+          <div class="accessibility-controls">
+            <button
+              id="darkModeToggle"
+              class="accessibility-btn"
+              aria-label="Toggle dark mode"
+            >
+              <span class="material-icons">dark_mode</span>
+              <span class="btn-label">Dark Mode</span>
+            </button>
+            <button
+              id="increaseFontBtn"
+              class="accessibility-btn"
+              aria-label="Increase font size"
+            >
+              <span class="material-icons">text_increase</span>
+              <span class="btn-label">Increase Text</span>
+            </button>
+            <button
+              id="decreaseFontBtn"
+              class="accessibility-btn"
+              aria-label="Decrease font size"
+            >
+              <span class="material-icons">text_decrease</span>
+              <span class="btn-label">Decrease Text</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!------- Header / Branding ------->
       <header class="site-header">
+        <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="header-logo" />
         <h1 class="site-title">Smart Product Advisor</h1>
       </header>
 
@@ -49,18 +126,22 @@
 
       <!------- Footer Links ------->
       <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <p>&copy; 2025 L'Oréal. All rights reserved.</p>
         <nav>
           <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
+          <a href="https://www.loreal.com/en/group/global-privacy-policy/"
+            >Privacy Policy</a
+          >
+          <a href="https://www.loreal.com/en/term-of-use/">Terms of Use</a>
+          <a href="https://www.linkedin.com/company/1662?trk=tyah">Contact</a>
         </nav>
       </footer>
     </div>
 
     <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
     <script src="secrets.js"></script>
+    <!-- Anime.js library for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
